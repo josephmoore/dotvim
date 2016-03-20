@@ -11,6 +11,7 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'ivanov/vim-ipython'
 Plugin 'sophacles/vim-processing'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -24,15 +25,24 @@ set number
 set ruler
 set showcmd
 set virtualedit=all
+set splitbelow
 let mapleader=","
 let g:netrw_browsex_viewer="setsid gnome-open" 
 nnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 "switch current and next word
 nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
+<<<<<<< Updated upstream
 "yank to clipboard
 map <leader>y "+y
 "paste from clipboard
 map <leader>p "+p
+
+ "============= MOVING AROUND IN COMMAND MODE
+ cnoremap <c-h> <left>
+ cnoremap <c-j> <down>
+ cnoremap <c-k> <up>
+ cnoremap <c-l> <right>
+
 "============= LANGUAGES
 "set tabs for python files
 autocmd FileType py setlocal shiftwidth=4 tabstop=4 softtabstop=4
