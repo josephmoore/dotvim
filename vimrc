@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/VundleVim/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'VundleVim/Vundle.vim' "required
 Plugin 'scrooloose/nerdtree'
@@ -11,6 +11,7 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'mhinz/vim-startify'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'sophacles/vim-processing'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -26,7 +27,12 @@ set virtualedit=all
 let mapleader=","
 let g:netrw_browsex_viewer="setsid gnome-open" 
 nnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-
+"switch current and next word
+nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
+"yank to clipboard
+map <leader>y "+y
+"paste from clipboard
+map <leader>p "+p
 "============= LANGUAGES
 "set tabs for python files
 autocmd FileType py setlocal shiftwidth=4 tabstop=4 softtabstop=4
@@ -40,7 +46,7 @@ imap <expr> <S-tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "remap ctrlp
 let g:ctrlp_show_hidden=1
-let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_map = '<Leader>cp'
 let g:ctrlp_cmd = 'CtrlP'
 map ; :CtrlPBuffer<CR>
 
