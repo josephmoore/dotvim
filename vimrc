@@ -31,17 +31,16 @@ let g:netrw_browsex_viewer="setsid gnome-open"
 nnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 "switch current and next word
 nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
-<<<<<<< Updated upstream
 "yank to clipboard
 map <leader>y "+y
 "paste from clipboard
 map <leader>p "+p
 
- "============= MOVING AROUND IN COMMAND MODE
- cnoremap <c-h> <left>
- cnoremap <c-j> <down>
- cnoremap <c-k> <up>
- cnoremap <c-l> <right>
+"============= MOVING AROUND IN COMMAND MODE
+cnoremap <c-h> <left>
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+cnoremap <c-l> <right>
 
 "============= LANGUAGES
 "set tabs for python files
