@@ -34,7 +34,7 @@ nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
 "yank to clipboard
 map <leader>y "+y
 "paste from clipboard
-map <leader>p "+p
+map <leader>p "+P
 
 "============= MOVING AROUND IN COMMAND MODE
 cnoremap <c-h> <left>
