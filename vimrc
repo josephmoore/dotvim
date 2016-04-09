@@ -44,7 +44,7 @@ cnoremap <c-l> <right>
 
 "============= LANGUAGES
 "set tabs for python files
-autocmd FileType py setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType py setlocal tabstop=8 expandtab softtabstop=4 shiftwidth=4 filetype indent on
 
 "============= GUI
 set guioptions-=T  "remove toolbar
