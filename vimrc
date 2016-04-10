@@ -44,7 +44,8 @@ cnoremap <c-l> <right>
 
 "============= LANGUAGES
 "set tabs for python files
-autocmd FileType py setlocal tabstop=8 expandtab softtabstop=0 shiftwidth=4 smarttab
+set modeline
+autocmd FileType *.py set shiftwidth=4 tabstop=4 softtabstop=4 
 
 "============= GUI
 set guioptions-=T  "remove toolbar
