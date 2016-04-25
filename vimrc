@@ -13,19 +13,21 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ivanov/vim-ipython'
 Plugin 'sophacles/vim-processing'
+Plugin 'kshenoy/vim-signature'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 "============= BASIC CHANGES
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
+"set tabstop=2
+"set softtabstop=2
+"set shiftwidth=2
+"set expandtab
 set number           
 set ruler
 set showcmd
 set virtualedit=all
 set splitbelow
+set nowrap
 let mapleader=","
 let g:netrw_browsex_viewer="setsid gnome-open" 
 nnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
@@ -44,8 +46,7 @@ cnoremap <c-l> <right>
 
 "============= LANGUAGES
 "set tabs for python files
-set modeline
-autocmd FileType *.py set shiftwidth=4 tabstop=4 softtabstop=4 
+autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 "============= GUI
 set guioptions-=T  "remove toolbar
