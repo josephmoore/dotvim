@@ -70,6 +70,7 @@ color blackboard
 
 "NERDtree
 map <C-e> :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 
 "jedi-vim
 let g:jedi#popup_on_dot = 0
