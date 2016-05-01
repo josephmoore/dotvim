@@ -14,6 +14,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'ivanov/vim-ipython'
 Plugin 'sophacles/vim-processing'
 Plugin 'kshenoy/vim-signature'
+Plugin 'moll/vim-bbye'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -57,7 +58,7 @@ imap <expr> <S-tab> emmet#expandAbbrIntelligent("\<tab>")
 
 "remap ctrlp
 let g:ctrlp_show_hidden=1
-let g:ctrlp_map = '<Leader>cp'
+let g:ctrlp_map = '<Leader>cp' "avoid collision with yankring
 let g:ctrlp_cmd = 'CtrlP'
 map ; :CtrlPBuffer<CR>
 
@@ -74,3 +75,6 @@ nmap <leader>f :NERDTreeFind<CR>
 
 "jedi-vim
 let g:jedi#popup_on_dot = 0
+
+"bbye deletes buffer without changing layout
+:nnoremap <Leader>q :Bdelete<CR>
