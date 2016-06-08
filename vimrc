@@ -46,6 +46,8 @@ cnoremap <c-k> <up>
 cnoremap <c-l> <right>
 
 "============= LANGUAGES
+"set tabs for php files
+set tabstop=4 expandtab shiftwidth=2 softtabstop=2
 "set tabs for python files
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
@@ -78,3 +80,7 @@ let g:jedi#popup_on_dot = 0
 
 "bbye deletes buffer without changing layout
 :nnoremap <Leader>q :Bdelete<CR>
+
+"set column 
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=#010114
