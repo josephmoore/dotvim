@@ -38,6 +38,9 @@ nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
 map <leader>y "+y
 "paste from clipboard
 map <leader>p "+P
+"turn on matchit
+filetype plugin on
+runtime macros/matchit.vim
 
 "============= MOVING AROUND IN COMMAND MODE
 cnoremap <c-h> <left>
@@ -53,7 +56,7 @@ autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 "============= GUI
 set guioptions-=T  "remove toolbar
-
+set guioptions=noerrorbell
 "============= PLUGINS
 "remap emmet's key combination to tab
 imap <expr> <S-tab> emmet#expandAbbrIntelligent("\<tab>")
