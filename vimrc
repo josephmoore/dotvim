@@ -56,7 +56,6 @@ autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 "============= GUI
 set guioptions-=T  "remove toolbar
-set guioptions=noerrorbell
 "============= PLUGINS
 "remap emmet's key combination to tab
 imap <expr> <S-tab> emmet#expandAbbrIntelligent("\<tab>")
