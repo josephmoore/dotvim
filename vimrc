@@ -31,7 +31,7 @@ set ruler
 set showcmd
 set virtualedit=all
 set splitbelow
-set wrap
+set nowrap
 set breakindent
 let mapleader=","
 let g:netrw_browsex_viewer="setsid gnome-open" 
