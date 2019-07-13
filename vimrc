@@ -4,20 +4,23 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'VundleVim/Vundle.vim' "required
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'ratazzi/blackboard.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'mhinz/vim-startify'
-Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'ivanov/vim-ipython'
 Plugin 'sophacles/vim-processing'
 Plugin 'kshenoy/vim-signature'
 Plugin 'moll/vim-bbye'
+Plugin 'pangloss/vim-javascript'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'powerline/powerline'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+"Plugin 'ctrlpvim/ctrlp.vim'
 "============= BASIC CHANGES
 "set tabstop=2
 "set softtabstop=2
@@ -28,7 +31,8 @@ set ruler
 set showcmd
 set virtualedit=all
 set splitbelow
-set nowrap
+set wrap
+set breakindent
 let mapleader=","
 let g:netrw_browsex_viewer="setsid gnome-open" 
 nnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
@@ -41,7 +45,6 @@ map <leader>p "+P
 "turn on matchit
 filetype plugin on
 runtime macros/matchit.vim
-
 "============= MOVING AROUND IN COMMAND MODE
 cnoremap <c-h> <left>
 cnoremap <c-j> <down>
@@ -53,7 +56,8 @@ cnoremap <c-l> <right>
 set tabstop=4 expandtab shiftwidth=2 softtabstop=2
 "set tabs for python files
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
+autocmd FileType python syntax keyword pyself self
+autocmd Filetype python highlight pyself ctermfg=202 guifg=Orange
 "============= GUI
 set guioptions-=T  "remove toolbar
 "============= PLUGINS
@@ -76,6 +80,7 @@ color blackboard
 "NERDtree
 map <C-e> :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 "jedi-vim
 let g:jedi#popup_on_dot = 0
@@ -86,3 +91,16 @@ let g:jedi#popup_on_dot = 0
 "set column 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=#010114
+
+"put swap files in tmp directory ~/.vim/tmp/
+set directory^=$HOME/.vim/tmp/
+
+
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+let g:Powerline_symbols = 'fancy'
