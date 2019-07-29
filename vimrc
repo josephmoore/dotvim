@@ -6,15 +6,14 @@ Plugin 'VundleVim/Vundle.vim' "required
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mattn/emmet-vim'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'ratazzi/blackboard.vim'
+"Plugin 'ratazzi/blackboard.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'mhinz/vim-startify'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'sophacles/vim-processing'
 Plugin 'kshenoy/vim-signature'
 Plugin 'moll/vim-bbye'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'powerline/powerline'
 call vundle#end()            " required
@@ -35,7 +34,10 @@ set nowrap
 set breakindent
 let mapleader=","
 let g:netrw_browsex_viewer="setsid gnome-open" 
-nnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+set mouse=n
+"cnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+"nmap <leader>w yiW:!xdg-open  
+let g:netrw_browsex_viewer= "xdg-open"
 "switch current and next word
 nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
 "yank to clipboard
@@ -75,7 +77,7 @@ set t_Co=256
 set background=dark
 
 "colorscheme
-color blackboard
+"color blackboard
 
 "NERDtree
 map <C-e> :NERDTreeToggle<CR>
@@ -83,7 +85,7 @@ nmap <leader>f :NERDTreeFind<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 "jedi-vim
-let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_on_dot = 0
 
 "bbye deletes buffer without changing layout
 :nnoremap <Leader>q :Bdelete<CR>
@@ -100,6 +102,11 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
+
+
+"open current file in browser
+noremap <Leader>c :exe 'silent !chromium-browser %'<CR>
+noremap <Leader>f :exe 'silent !firefox %'<CR>
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
