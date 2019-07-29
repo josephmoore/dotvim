@@ -15,7 +15,6 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'moll/vim-bbye'
 "Plugin 'pangloss/vim-javascript'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'powerline/powerline'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -33,11 +32,8 @@ set splitbelow
 set nowrap
 set breakindent
 let mapleader=","
-let g:netrw_browsex_viewer="setsid gnome-open" 
-set mouse=n
-"cnoremap <leader>w :silent !/usr/bin/firefox <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-"nmap <leader>w yiW:!xdg-open  
 let g:netrw_browsex_viewer= "xdg-open"
+set mouse=n
 "switch current and next word
 nmap <leader>x :s/\v(<\k*%#\k*>)(\_.{-})(<\k+>)/\3\2\1/ <CR>
 "yank to clipboard
@@ -47,6 +43,7 @@ map <leader>p "+P
 "turn on matchit
 filetype plugin on
 runtime macros/matchit.vim
+
 "============= MOVING AROUND IN COMMAND MODE
 cnoremap <c-h> <left>
 cnoremap <c-j> <down>
@@ -60,6 +57,7 @@ set tabstop=4 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python syntax keyword pyself self
 autocmd Filetype python highlight pyself ctermfg=202 guifg=Orange
+
 "============= GUI
 set guioptions-=T  "remove toolbar
 "============= PLUGINS
@@ -96,9 +94,6 @@ highlight ColorColumn ctermbg=0 guibg=#010114
 
 "put swap files in tmp directory ~/.vim/tmp/
 set directory^=$HOME/.vim/tmp/
-
-
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
